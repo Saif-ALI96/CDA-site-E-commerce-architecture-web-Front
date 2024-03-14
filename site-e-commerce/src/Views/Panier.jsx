@@ -1,13 +1,11 @@
 import React from 'react';
 import Navigationbar from '../Components/NavigationBar';
-import CardProduit from '../Components/CardProduit';
 
-const Homepage = () => {
+const Panier = () => {
     return (<>
         <Navigationbar />
-        <CardProduit />
         </>
     );
 };
 
-export default Homepage;
+export default Panier;
