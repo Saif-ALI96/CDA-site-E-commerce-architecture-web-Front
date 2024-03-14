@@ -1,10 +1,9 @@
 import React from 'react';
+import Navigationbar from '../Components/NavigationBar';
 
 const Homepage = () => {
     return (
-        <div>
-            
-        </div>
+        <Navigationbar />
     );
 };
 
