@@ -1,9 +1,8 @@
 import React from "react";
 import Navigationbar from "../Components/NavigationBar";
 import CardProduit from "../Components/CardProduit";
-import Produits from "./Produits";
 
-const Homepage = () => {
+const Produits = () => {
   return (
     <>
       <Navigationbar />
@@ -12,4 +11,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default Produits;
