@@ -7,61 +7,66 @@ import image2 from "../assets/image2.png";
 import image3 from "../assets/image3.png";
 import image4 from "../assets/image4.png";
 
-const CardProduit = () => {
+const CardProduit = ({produits}) => {
+
+  console.log(produits);
+
   return (
     <div style={styles.container}>
-      <Card style={styles.card}>
-        <Image src={image1} fluid />
+      {produits.map((produit) => (
+         <Card style={styles.card}>
+        <Image src={produit.image} fluid />
         {/* <Card.Img variant="top" src="../../public/image1.png" /> */}
         <Card.Body style={styles.cardText}>
-          <Card.Title>Card Title</Card.Title>
+          <Card.Title>{produit.titre}</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            {produit.description}
           </Card.Text>
           <Button style={styles.button}>Go somewhere</Button>
         </Card.Body>
       </Card>
-
-      <Card style={styles.card}>
-        <Image src={image2} fluid />
-        {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-        <Card.Body style={styles.cardText}>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-          <Button style={styles.button}>Go somewhere</Button>
-        </Card.Body>
-      </Card>
-      <Card style={styles.card}>
-        <Image src={image3} fluid />
-        {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-        <Card.Body style={styles.cardText}>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-          <Button style={styles.button}>Go somewhere</Button>
-        </Card.Body>
-      </Card>
-      <Card style={styles.card}>
-        <Image src={image4} fluid />
-        {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-        <Card.Body style={styles.cardText}>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-          <Button style={styles.button}>Go somewhere</Button>
-        </Card.Body>
-      </Card>
-    </div>
+      ))}
+     </div>
   );
 };
+      // {/* <Card style={styles.card}>
+      //   <Image src={image2} fluid />
+      //   {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+      //   <Card.Body style={styles.cardText}>
+      //     <Card.Title>Card Title</Card.Title>
+      //     <Card.Text>
+      //       Some quick example text to build on the card title and make up the
+      //       bulk of the card's content.
+      //     </Card.Text>
+      //     <Button style={styles.button}>Go somewhere</Button>
+      //   </Card.Body>
+      // </Card>
+      // <Card style={styles.card}>
+      //   <Image src={image3} fluid />
+      //   {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+      //   <Card.Body style={styles.cardText}>
+      //     <Card.Title>Card Title</Card.Title>
+      //     <Card.Text>
+      //       Some quick example text to build on the card title and make up the
+      //       bulk of the card's content.
+      //     </Card.Text>
+      //     <Button style={styles.button}>Go somewhere</Button>
+      //   </Card.Body>
+      // </Card>
+      // <Card style={styles.card}>
+      //   <Image src={image4} fluid />
+      //   {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+      //   <Card.Body style={styles.cardText}>
+      //     <Card.Title>Card Title</Card.Title>
+      //     <Card.Text>
+      //       Some quick example text to build on the card title and make up the
+      //       bulk of the card's content.
+      //     </Card.Text>
+      //     <Button style={styles.button}>Go somewhere</Button>
+      //   </Card.Body>
+      // </Card> */}
+    
+
 
 const styles = {
   container: {
