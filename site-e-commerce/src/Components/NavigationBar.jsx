@@ -1,21 +1,18 @@
-import React, {useState} from "react";
-import { Button } from "react-bootstrap";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+// Navigationbar.jsx
+import React, { useState } from "react";
 import { FaBasketShopping } from "react-icons/fa6";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import AjouterModal from "./AjouterModal";
+import { Navbar, Container, Nav } from "react-bootstrap";
 
 const Navigationbar = () => {
-
   const [showModal, setShowModal] = useState(false);
 
   const handleShowModal = () => {
     setShowModal(true);
   };
 
-  return (
+  return (<>
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
         <Navbar.Brand href="#home">Idée de nom ?</Navbar.Brand>
@@ -34,8 +31,8 @@ const Navigationbar = () => {
           </Nav>
         </Navbar.Collapse>
       </Container>
-      <AjouterModal show={showModal} handleClose={() => setShowModal(false)} />
-    </Navbar>
+    </Navbar><AjouterModal show={showModal} handleClose={() => setShowModal(false)} />
+    </>
   );
 };
 
