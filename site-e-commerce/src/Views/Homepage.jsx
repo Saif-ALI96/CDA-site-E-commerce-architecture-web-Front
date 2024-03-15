@@ -10,8 +10,7 @@ const Homepage = () => {
   const fetchProduit = async () => {
     try {
       let response = await ProduitsController.getAllProduits();
-      // Convertissez les données reçues en instances de votre modèle de produit
-      const produitsData = response.data.map((prod) => new Product(prod.id, prod.title, prod.description, prod.image));
+      const produitsData = response.data.map((prod) => new Product(prod.id, prod.titre, prod.description, prod.image));
       setProduits(produitsData);
       console.log(produitsData);
     } catch (error) {

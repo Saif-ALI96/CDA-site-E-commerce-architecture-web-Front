@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
@@ -6,12 +6,19 @@ import image1 from "../assets/image1.png";
 import image2 from "../assets/image2.png";
 import image3 from "../assets/image3.png";
 import image4 from "../assets/image4.png";
+import ModalProduits from "./ModalProduits";
 
 const CardProduit = ({produits}) => {
 
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShowModal = () => {
+    setShowModal(true);
+  };
+
   console.log(produits);
 
-  return (
+  return (<>
     <div style={styles.container}>
       {produits.map((produit) => (
          <Card style={styles.card}>
@@ -22,11 +29,12 @@ const CardProduit = ({produits}) => {
           <Card.Text>
             {produit.description}
           </Card.Text>
-          <Button style={styles.button}>Go somewhere</Button>
+          <Button onClick={handleShowModal} style={styles.button}>Voir plus</Button>
         </Card.Body>
       </Card>
       ))}
      </div>
+     <ModalProduits show={showModal} handleClose={() => setShowModal(false)} /></>
   );
 };
       // {/* <Card style={styles.card}>
