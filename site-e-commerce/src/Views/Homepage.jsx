@@ -10,7 +10,7 @@ const Homepage = () => {
   const fetchProduit = async () => {
     try {
       let response = await ProduitsController.getAllProduits();
-      const produitsData = response.data.map((prod) => new Product(prod.id, prod.titre, prod.description, prod.image));
+      const produitsData = response.data.map((prod) => new Product(prod.id, prod.titre, prod.description, prod.image, prod.prix));
       setProduits(produitsData);
       console.log(produitsData);
     } catch (error) {
