@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import ProduitsController from "../Controllers/ProduitsController";
+import { postProductController } from "../Controllers/PostProductController";
 
 const AjouterModal = ({ show, handleClose }) => {
 
@@ -21,7 +21,7 @@ const AjouterModal = ({ show, handleClose }) => {
       description: description
     };
 
-    await ProduitsController.postProduit(newProduct);
+    await postProductController(newProduct);
     handleClose();
       window.location.reload();
     } catch (error) {
