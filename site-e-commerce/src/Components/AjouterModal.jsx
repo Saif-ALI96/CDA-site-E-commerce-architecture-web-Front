@@ -41,25 +41,25 @@ const AjouterModal = ({ show, handleClose }) => {
         </Modal.Header>
         <Modal.Body>
           {" "}
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Group className="mb-3" controlId="formBasicTitre">
             <Form.Control onChange={(e) => setTitre(e.target.value)} type="text" placeholder="Title" />
           </Form.Group>
         </Modal.Body>
         <Modal.Body>
           {" "}
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Group className="mb-3" controlId="formBasicImage">
             <Form.Control onChange={(e) => setImage(e.target.value)} type="text" placeholder="Image" />
           </Form.Group>
         </Modal.Body>
         <Modal.Body>
           {" "}
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Group className="mb-3" controlId="formBasicPrix">
             <Form.Control onChange={(e) => setPrix(e.target.value)} type="text" placeholder="Prix" />
           </Form.Group>
         </Modal.Body>
         <Modal.Body>
           {" "}
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Group className="mb-3" controlId="formBasicDescription">
             <Form.Control onChange={(e) => setDescription(e.target.value)} as="textarea" rows={5} placeholder="Description" />
           </Form.Group>
         </Modal.Body>

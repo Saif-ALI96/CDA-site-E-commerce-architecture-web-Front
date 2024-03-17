@@ -1,8 +1,14 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import deleteProduct from "../Controllers/DeleteProductController";
 
 const ModalProduits = ({ show, onHide, produit }) => {
+
+  const handleDelete = () => {
+    deleteProduct(produit.id, onHide);
+  };
+
   return (
     <Modal size="lg" show={show} onHide={onHide} centered>
       <Modal.Header closeButton>
@@ -15,7 +21,7 @@ const ModalProduits = ({ show, onHide, produit }) => {
       </Modal.Body>
       <Modal.Footer>
         <Button variant="success">Modifier</Button>
-        <Button variant="danger">Supprimer</Button>
+        <Button onClick={handleDelete} variant="danger">Supprimer</Button>
         <Button onClick={onHide}>Annuler</Button>
       </Modal.Footer>
     </Modal>
