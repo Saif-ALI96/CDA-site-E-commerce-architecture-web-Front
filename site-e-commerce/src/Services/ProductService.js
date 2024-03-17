@@ -8,6 +8,10 @@ function postProduit(newProduct){
   return axios.post("http://localhost:8080/produit", newProduct)
 }
 
+function putProduit(id_produit, newProduct){
+  return axios.put("http://localhost:8080/produit/" + id_produit, newProduct);
+}
+
 function deleteProduit(id_produit){
   return axios.delete("http://localhost:8080/produit/"+ id_produit);
 }
@@ -15,5 +19,6 @@ function deleteProduit(id_produit){
 export default {
   getAllProduits,
   postProduit,
-  deleteProduit
+  deleteProduit,
+  putProduit
 };

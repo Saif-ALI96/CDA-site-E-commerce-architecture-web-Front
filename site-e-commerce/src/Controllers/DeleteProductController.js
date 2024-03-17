@@ -1,6 +1,6 @@
 import ProductService from "../Services/ProductService";
 
-const deleteProduct = async (produit_id, onHide) => {
+const deleteProductController = async (produit_id, onHide) => {
     try {
         await ProductService.deleteProduit(produit_id);
         onHide();
@@ -10,4 +10,4 @@ const deleteProduct = async (produit_id, onHide) => {
     }
 }
 
-export default deleteProduct;
+export default deleteProductController;

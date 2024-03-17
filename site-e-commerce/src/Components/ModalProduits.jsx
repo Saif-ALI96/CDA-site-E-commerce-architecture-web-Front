@@ -1,15 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import deleteProduct from "../Controllers/DeleteProductController";
+import deleteProductController from "../Controllers/DeleteProductController";
+import ModalPutProduit from "./ModalPutProduit";
 
 const ModalProduits = ({ show, onHide, produit }) => {
 
-  const handleDelete = () => {
-    deleteProduct(produit.id, onHide);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShowModal = () => {
+    setShowModal(true);
   };
 
-  return (
+  const handleDelete = () => {
+    deleteProductController(produit.id, onHide);
+  };
+  
+  return (<>
     <Modal size="lg" show={show} onHide={onHide} centered>
       <Modal.Header closeButton>
         <Modal.Title>{produit.titre}</Modal.Title>
@@ -20,11 +28,13 @@ const ModalProduits = ({ show, onHide, produit }) => {
         <p>{produit.description}</p>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="success">Modifier</Button>
+        <Button onClick={handleShowModal} variant="success">Modifier</Button>
         <Button onClick={handleDelete} variant="danger">Supprimer</Button>
         <Button onClick={onHide}>Annuler</Button>
       </Modal.Footer>
     </Modal>
+        <ModalPutProduit productId={produit.id} show={showModal} handleClose={() => setShowModal(false)} />
+        </>
   );
 };
 
