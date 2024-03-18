@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"; // Import de Link depuis react-router-dom
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
@@ -23,22 +24,29 @@ const CardProduit = ({ produits }) => {
             <Card.Body style={styles.cardText}>
               <Card.Title>{produit.titre}</Card.Title>
               <Card.Text>
-                
-              {truncateText(produit.description, MAX_DESCRIPTION_LENGTH)}
-
-                </Card.Text>
+                {truncateText(produit.description, MAX_DESCRIPTION_LENGTH)}
+              </Card.Text>
               <Card.Text>{produit.prix} €</Card.Text>
-              <Button
-                onClick={() => handleShowModal(produit)}
-                style={styles.button}
-              >
-                Voir plus
-              </Button>
+              <div className="text-center">
+                <Button
+                  onClick={() => handleShowModal(produit)}
+                  style={styles.button}
+                >
+                  Voir plus
+                </Button>
+              </div>
+              <div className="text-center">
+                <Link to={"/panier"} state={{ product: produit } }>
+                  <Button variant="success" style={styles.button}>
+                    Ajouter au panier
+                  </Button>
+                </Link>
+              </div>
             </Card.Body>
           </Card>
         ))}
       </div>
-      {selectedProduct &&(
+      {selectedProduct && (
         <ModalProduits
           show={showModal}
           onHide={() => setShowModal(false)}
@@ -50,11 +58,14 @@ const CardProduit = ({ produits }) => {
 };
 
 const truncateText = (text, maxLength) => {
+  if (!text) return '';
+
   if (text.length > maxLength) {
     return text.substring(0, maxLength) + '...';
   }
   return text;
 };
+
 
 const styles = {
   container: {
@@ -75,9 +86,6 @@ const styles = {
     color: "#333",
   },
   button: {
-    backgroundColor: "#007bff",
-    borderColor: "#007bff",
-    borderRadius: "5px",
     marginTop: "30px",
     marginBottom: "20px",
     flex: "1",
