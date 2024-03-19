@@ -27,18 +27,16 @@ const CardProduit = ({ produits }) => {
                 {truncateText(produit.description, MAX_DESCRIPTION_LENGTH)}
               </Card.Text>
               <Card.Text>{produit.prix} €</Card.Text>
-              <div className="text-center">
+              <div style={styles.groupbutton}>
                 <Button
                   onClick={() => handleShowModal(produit)}
                   style={styles.button}
                 >
                   Voir plus
                 </Button>
-              </div>
-              <div className="text-center">
                 <Link to={"/panier"} state={{ product: produit } }>
                   <Button variant="success" style={styles.button}>
-                    Ajouter au panier
+                    Ajout au panier
                   </Button>
                 </Link>
               </div>
@@ -74,7 +72,7 @@ const styles = {
     flexWrap: "wrap",
     margin: "0 50px",
     gap: "20px",
-    paddingTop: "50px",
+    paddingTop: "40px",
   },
   card: {
     width: "18rem",
@@ -90,6 +88,11 @@ const styles = {
     marginBottom: "20px",
     flex: "1",
   },
+  groupbutton: {
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '10px'
+  }
 };
 
 export default CardProduit;

@@ -20,7 +20,8 @@ const Panier = () => {
                                 <CardPanier product={product} />
                             </div>
                         ) : (
-                            <p>Aucun produit n'a été ajouté au panier.</p>
+                            <h2 className='text-center' style={{marginTop: '50px'}}>Aucun produit n'a été ajouté au panier.</h2>
+                            
                         )}
                     </div>
                 </div>
