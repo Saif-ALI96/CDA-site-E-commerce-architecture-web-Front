@@ -13,10 +13,10 @@ L'utilisateur pourra:
 
 ## Initialisation
 
-Afin d'initialiser le projet, vous devez tout d'abord cloner ce repository: [CDA-site-E-commerce-architecture-web-Front](https://github.com/florianpoteau/CDA-site-E-commerce-architecture-web-Front)
+Afin d'initialiser le projet, vous devez tout d'abord cloner ce repository: [CDA-site-E-commerce-architecture-web-Back](https://github.com/florianpoteau/CDA-site-E-commerce-architecture-web-Back)
 
 ```bash
-git clone https://github.com/florianpoteau/CDA-site-E-commerce-architecture-web-Front.git
+git clone https://github.com/florianpoteau/CDA-site-E-commerce-architecture-web-Back.git
 ```
 
 puis faites :
